@@ -1,16 +1,8 @@
 import React from 'react'
 
-interface Todo{
-    text: string, 
-    isCompleted: boolean
-}
-
 interface Props{
-    todo : {
-        text: string;
-        isCompleted: boolean;
-    },
-    toggleTodo: (selectedTodo: Todo) => void;
+    todo : Todo,
+    toggleTodo: ToggleTodo
 }
 
 const TodoListItem: React.FC<Props> = ({todo, toggleTodo}) => {

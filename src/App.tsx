@@ -5,16 +5,11 @@ import  './App.css';
 
 const App: React.FC = () => {
 
-  interface Todo{
-    text: string,
-    isCompleted: boolean
-  }
-
   const initialTodos: Array<Todo> = [{text:'Do the dishes', isCompleted: false}, {text:'Walk the dog', isCompleted: false}]
 
   const [todos, setTodos] = useState(initialTodos);
 
-  const toggleTodo = (selectedTodo: Todo) => {
+  const toggleTodo: ToggleTodo = (selectedTodo) => {
       const newTodos = todos.map(todo => {
         if(todo === selectedTodo){
           return {
@@ -28,7 +23,7 @@ const App: React.FC = () => {
       setTodos(newTodos);
   }
 
-  const addTodo = (newTodo: string) => {
+  const addTodo: AddTodo = (newTodo) => {
       newTodo.trim() !== "" && setTodos([...todos, {text: newTodo, isCompleted: false}])
   }
 

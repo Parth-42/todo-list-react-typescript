@@ -1,14 +1,9 @@
 import React from 'react'
 import TodoListItem from './TodoListItem'
 
-interface Todo{
-    text: string, 
-    isCompleted: boolean
-}
-
 interface Props {
     todos: Array<Todo>,
-    toggleTodo: (selectedTodo: Todo) => void;
+    toggleTodo: ToggleTodo;
 }
 
 const TodoList: React.FC<Props> = ({todos, toggleTodo}) => {

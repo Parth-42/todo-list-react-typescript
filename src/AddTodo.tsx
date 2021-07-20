@@ -1,10 +1,10 @@
 import React,{ChangeEvent, useState, FormEvent} from 'react'
 
-interface addTodoProps {
-    addTodo: (newTodo: string) => void
+interface Props {
+    addTodo: AddTodo
 }
 
-const AddTodo: React.FC<addTodoProps> = ({addTodo}) => {
+const AddTodo: React.FC<Props> = ({addTodo}) => {
 
     const [newTodo, setNewTodo] = useState<string>("")
 
